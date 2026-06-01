@@ -1,6 +1,10 @@
-"""A greeting module."""
-def greet(name="World"):
-    return f"Hello, {name}!"
+"""A multi-language greeting module."""
+GREETINGS = {"en": "Hello", "zh": "你好", "ja": "こんにちは"}
+
+def greet(name="World", lang="en"):
+    greeting = GREETINGS.get(lang, GREETINGS["en"])
+    return f"{greeting}, {name}!"
+
 if __name__ == "__main__":
     print(greet())
-# TODO: add tests
+    print(greet("Git", "zh"))
